@@ -1,0 +1,107 @@
+html{scroll-behavior:smooth}
+
+body {
+    background-color: #f7f7f8;
+
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+}
+
+.intro-palm {
+    background-image: url("../images/julian-howard-655515-unsplash.jpg");
+    background-size: cover;
+    height: 70vh;
+    display: flex;
+    min-height: auto;
+    text-align: center;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    padding: 170px 15px;
+}
+
+header .header-palm-inner h1{
+    color: #de77ae;
+    margin: 0;
+    text-shadow: 1px 1px 10px #fff, 1px 1px 10px #fff, 1px 1px 10px #fff, -1px -1px 10px #fff,-1px -1px 10px #fff,-1px -1px 10px #fff,1px 1px 10px #fff;
+}
+
+.navshadow {
+    -webkit-box-shadow: 0 1px 10px rgba(1,1,1,.7);
+    box-shadow: 0 1px 10px rgba(1,1,1,.7);
+}
+
+.blockquote {
+    font-size: 90%;
+}
+
+.card-deck{
+    height: 25vh;
+    margin-top:1%;
+    margin-bottom:1%;
+}
+
+.card {
+    display: flex;
+    min-height: auto;
+    text-align: left;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
+}
+
+
+#card-image {
+    width: 100%;
+}
+
+#dash {
+    margin-top: 150px;
+    background-color: #f7f7f8;
+    height:100vh;
+    position: absolute;
+    display: flex;
+    min-height: auto;
+    text-align: center;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+.anchor a {
+    position: absolute;
+    left: 0px;
+    top: -10px;
+  }
+
+.anchor {
+    position: relative;
+}
+
+#html, #body, #dash, #card, #top-card {
+    height: 25vh;
+}
+
+#html, #body, #dash, #map-container {
+    position: relative;
+    height: 55vh;
+    width: 50vw;
+}
+
+#map-id {
+    position: relative;
+    height: inherit;
+}

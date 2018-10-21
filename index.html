@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+    crossorigin=""></script>
+        <link href="https://bootswatch.com/4/litera/bootstrap.css"rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <title>California Quitters</title>
+    </head>
+    <body>
+      
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navshadow">
+            <a class="navbar-brand" href="#">Quitting California</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarColor03">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">The Project </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Data Sources</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contributors</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        <header class="intro-palm">
+          <div class="header-palm-inner">
+            <h1>Why Quit California?</h1>
+            <br />
+            <a href="#target"><button type="button" class="btn btn-info">Why Indeed...</button></a>
+          </div>
+        </header>
+        
+          <div class="container">
+            <div class="row">
+              <div class="card-deck">
+                <div class="card">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">I say phooey to people who want all of the easy and none of the hard of California and just give up and git.</p>
+                        <footer class="blockquote-footer">Gustavo Arellano <cite title="Source Title">Los Angeles Times</cite></footer>
+                      </blockquote>
+                </div>
+                <div class="card">
+                  <img src="images/izayah-ramos-778080-unsplash.jpg" class="rounded" alt="why would you ever quit this?" width="100%">
+                </div>
+                <div class="card">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">“Where's your roommate?"<br/><br/>"Which one? The model, the yoga instructor or the influencer?"</p>
+                        <footer class="blockquote-footer">OverheardLA</footer>
+                      </blockquote>
+                </div>
+                <div class="card">
+                  <img src="images/sasha-stories-684488-unsplash.jpg" class="rounded" alt="seriously... why would you quit this?" width="100%">
+                </div>
+              </div>
+            </div>
+          </div>
+        <section id="dash">
+            <div class="anchor">
+                <a name="target">&nbsp;</a>
+              </div>
+            <!-- <div class="card-deck"> -->
+            <div id="#top-card">
+            <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Inspiration</h4>
+                  <p class="card-text">In response to a recent Los Angles Times article discussing California emigration, we decided to explore what factors might be contributing to it and its impact.</p>
+                  <a href="http://www.latimes.com/opinion/op-ed/la-oe-arellano-california-quitters-20181003-story.html class="card-link">View Article Here</a>
+                </div>
+            </div>
+              <br />
+            <div id="map-container">
+              <div id="map-id"></div>
+            </div>
+        </section>
+
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      <!-- D3 -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+
+      <script type="text/javascript"  src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+      <script src="https://unpkg.com/leaflet.vectorgrid@latest/dist/Leaflet.VectorGrid.js"></script>
+      <div id="map-id"></div>
+      
+    <!-- API key -->
+      <script type="text/javascript" src="js/config.js"></script>
+    <!-- JS -->
+      <script type="text/javascript" src="js/logic.js"></script>
+
+    </body>
+</html>
