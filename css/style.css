@@ -105,3 +105,19 @@ header .header-palm-inner h1{
     position: relative;
     height: inherit;
 }
+
+.intro-data {
+    background-image: url("../images/franki-chamaki-682112-unsplash.jpg");
+    background-size: cover;
+    height: 60vh;
+    display: flex;
+    min-height: auto;
+    text-align: center;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    padding: 170px 15px;
+}
