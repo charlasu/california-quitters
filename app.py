@@ -1,16 +1,6 @@
-import os
-
-import pandas as pd
-import numpy as np
-
-import sqlalchemy
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine
-
 from flask import Flask, jsonify, render_template
-from flask_sqlalchemy import SQLAlchemy
-
+import pymongo
+import json
 app = Flask(__name__)
 
 
@@ -18,59 +8,77 @@ app = Flask(__name__)
 # Database Setup
 #################################################
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data/caliquit.sqlite"
-db = SQLAlchemy(app)
+connect = 'mongodb://user:California1@ds253891.mlab.com:53891/project_2'
+client = pymongo.MongoClient(connect)
+
+#connect to mongo db and collection
+db = client.project_2
 
 # reflect an existing database into a new model
-Base = automap_base()
-Base.prepare(db.engine, reflect=True)
-
-# Save references to each table
-PopulationData = Base.classes.population
-BreweryData = Base.classes.breweries
-HousingData = Base.classes.housing
-
+# pop_db = client.
+# brew_db = client.
+# house_db = client.
 
 @app.route("/")
 def index():
     """Return the homepage."""
+
     return render_template("index.html")
 
-@app.route("/api/population/<year>")
-def population():
-    """Return a json of population data for given year"""
-    res = db.session.query(*sel).filter(PopulationData.year == year).all()
+@app.route("/test")
+def test():
+    """return ca brewery data"""
+    ca_brew_data = []
 
-    population_to_json = {}
-    for re in res:
-        population_to_json["year"] = re[0]
-        population_to_json["state"] = re[7]
-        population_to_json["pop"] = re[1]
-        population_to_json["variable_name"] = re[i]
+    collection = db.CA_Brewery
 
-    return jsonify(population_to_son)
+    cursor = collection.find({})
+    for doc in cursor:
+        appendable_dict = {
+            'brewery': doc['Brewery'],
+            'state': doc['State'],
+            'loc': doc['Location'],
+            'year_est': doc['Established Year']
+        }
+        ca_brew_data.append(appendable_dict)
 
-@app.route("api/breweries/<year>")
-def breweries():
-    """Return a json of brewery data for given year"""
-    res = db.session.query(*sel).filter(BreweryData.year == year).all()
+    return json.dumps(ca_brew_data)
 
-    brewery_to_json = {}
-    for re in res:
-        brewery_to_json["variable_name"] = re[i]
-
-    return jsonify(brewery_to_json)
-
-@app.route("api/housing/<year>")
-def housing():
-    """Return a json of housing data for given year"""
-    res = db.session.query(*sel).filter(HousingData.year == year).all()
-
-    house_to_json = {}
-    for re in res:
-        house_to_json["variable_name"] = re[i]
-
-    return jsonify(house_to_json)
+# @app.route("/api/population/<year>")
+# def population():
+#     """Return a json of population data for given year"""
+#     res = db.session.query(*sel).filter(PopulationData.year == year).all()
+#
+#     population_to_json = {}
+#     for re in res:
+#         population_to_json["year"] = re[0]
+#         population_to_json["state"] = re[7]
+#         population_to_json["pop"] = re[1]
+#         population_to_json["variable_name"] = re[i]
+#
+#     return jsonify(population_to_son)
+#
+# @app.route("/api/breweries/<year>")
+# def breweries():
+#     """Return a json of brewery data for given year"""
+#     res = db.session.query(*sel).filter(BreweryData.year == year).all()
+#
+#     brewery_to_json = {}
+#     for re in res:
+#         brewery_to_json["variable_name"] = re[i]
+#
+#     return jsonify(brewery_to_json)
+#
+# @app.route("/api/housing/<year>")
+# def housing():
+#     """Return a json of housing data for given year"""
+#     res = db.session.query(*sel).filter(HousingData.year == year).all()
+#
+#     house_to_json = {}
+#     for re in res:
+#         house_to_json["variable_name"] = re[i]
+#
+#     return jsonify(house_to_json)
 
 
 if __name__ == "__main__":
