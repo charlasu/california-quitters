@@ -1,43 +1,40 @@
-from flask import Flask, jsonify, render_template
+#import dependencies
+from flask import Flask, render_template
 import pymongo
 import json
+
+#establish flask app
 app = Flask(__name__)
 
-
-#################################################
-# Database Setup
-#################################################
-
+#connect local client to remote server through uri
 connect = 'mongodb://user:California1@ds253891.mlab.com:53891/project_2'
 client = pymongo.MongoClient(connect)
 
-#connect to mongo db and collection
+#create reference to project_2 db
 db = client.project_2
 
-# reflect an existing database into a new model
-# pop_db = client.
-# brew_db = client.
-# house_db = client.
-
+#routes
 @app.route("/")
 def index():
-    """Return the homepage."""
-    return render_template("index.html")
+    """return index.html"""
 
-get_brew_collection = {
-    'AZ': db.AZ_Brewery,
-    'CA': db.CA_Brewery,
-    'CO': db.CO_Brewery,
-    'ID': db.ID_Brewery,
-    'NV': db.NV_Brewery,
-    'OR': db.OR_Brewery,
-    'UT': db.UT_Brewery,
-    'WA': db.WA_Brewery
-}
+    return render_template("index.html")
 
 @app.route("/api/breweries/<state_abbr>")
 def brewery_state(state_abbr):
     """return brewery data by state"""
+    
+    #get collection by state abbreviation
+    get_brew_collection = {
+        'AZ': db.AZ_Brewery,
+        'CA': db.CA_Brewery,
+        'CO': db.CO_Brewery,
+        'ID': db.ID_Brewery,
+        'NV': db.NV_Brewery,
+        'OR': db.OR_Brewery,
+        'UT': db.UT_Brewery,
+        'WA': db.WA_Brewery
+    }
 
     collection = get_brew_collection[state_abbr.upper()]
     state_brew_data = []
@@ -54,10 +51,28 @@ def brewery_state(state_abbr):
 
     return json.dumps(state_brew_data)
 
-# @app.route("/test")
-# def test():
-#     """test"""
-#     collection = db.Population_Data
+@app.route("/api/population")
+def population():
+    """return population data"""
+
+    collection = db.Population_Data
+    pop_data = []
+
+    cursor = collection.find({})
+    for doc in cursor:
+        appendable_dict = {
+            'moved_to': doc['MOVED_TO'],
+            'coords': [float(doc['COORDS'].split(",")[0][1:]), float(doc['COORDS'].split(",")[1][1:][:-1])],
+            'year': int(doc['YR']),
+            'num_outbound': int(doc['NO_OUTBOUND'].replace(',', ''))
+        }
+        if(type(doc['POPULATION']) != str):
+            appendable_dict['population'] = int(-1)
+        else:
+            appendable_dict['population'] = int(doc['POPULATION'].replace(',', ''))
+        pop_data.append(appendable_dict)
+
+    return json.dumps(pop_data)
 
 # @app.route("/api/population/<year>")
 # def population():
