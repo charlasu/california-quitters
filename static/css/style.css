@@ -13,7 +13,7 @@ body {
 }
 
 .intro-palm {
-    background-image: url("../images/julian-howard-655515-unsplash.jpg");
+    background-image: url("../../templates/images/julian-howard-655515-unsplash.jpg");
     background-size: cover;
     height: 70vh;
     display: flex;
@@ -107,7 +107,7 @@ header .header-palm-inner h1{
 }
 
 .intro-data {
-    background-image: url("../images/franki-chamaki-682112-unsplash.jpg");
+    background-image: url("../../templates/images/franki-chamaki-682112-unsplash.jpg");
     background-size: cover;
     height: 60vh;
     display: flex;
