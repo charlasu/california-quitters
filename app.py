@@ -24,6 +24,17 @@ def index():
     """Return the homepage."""
     return render_template("index.html")
 
+get_brew_collection = {
+    'AZ': db.AZ_Brewery,
+    'CA': db.CA_Brewery,
+    'CO': db.CO_Brewery,
+    'ID': db.ID_Brewery,
+    'NV': db.NV_Brewery,
+    'OR': db.OR_Brewery,
+    'UT': db.UT_Brewery,
+    'WA': db.WA_Brewery
+}
+
 @app.route("/api/breweries/<state_abbr>")
 def brewery_state(state_abbr):
     """return brewery data by state"""
@@ -43,6 +54,11 @@ def brewery_state(state_abbr):
 
     return json.dumps(state_brew_data)
 
+# @app.route("/test")
+# def test():
+#     """test"""
+#     collection = db.Population_Data
+
 # @app.route("/api/population/<year>")
 # def population():
 #     """Return a json of population data for given year"""
@@ -56,17 +72,6 @@ def brewery_state(state_abbr):
 #         population_to_json["variable_name"] = re[i]
 #
 #     return jsonify(population_to_son)
-#
-# @app.route("/api/breweries/<year>")
-# def breweries():
-#     """Return a json of brewery data for given year"""
-#     res = db.session.query(*sel).filter(BreweryData.year == year).all()
-#
-#     brewery_to_json = {}
-#     for re in res:
-#         brewery_to_json["variable_name"] = re[i]
-#
-#     return jsonify(brewery_to_json)
 #
 # @app.route("/api/housing/<year>")
 # def housing():
