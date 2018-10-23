@@ -22,15 +22,14 @@ db = client.project_2
 @app.route("/")
 def index():
     """Return the homepage."""
-
     return render_template("index.html")
 
-@app.route("/test")
-def test():
-    """return ca brewery data"""
-    ca_brew_data = []
+@app.route("/api/breweries/<state_abbr>")
+def brewery_state(state_abbr):
+    """return brewery data by state"""
 
-    collection = db.CA_Brewery
+    collection = get_brew_collection[state_abbr.upper()]
+    state_brew_data = []
 
     cursor = collection.find({})
     for doc in cursor:
@@ -40,9 +39,9 @@ def test():
             'loc': doc['Location'],
             'year_est': doc['Established Year']
         }
-        ca_brew_data.append(appendable_dict)
+        state_brew_data.append(appendable_dict)
 
-    return json.dumps(ca_brew_data)
+    return json.dumps(state_brew_data)
 
 # @app.route("/api/population/<year>")
 # def population():
