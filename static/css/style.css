@@ -120,7 +120,7 @@ header .header-palm-inner p{
 }
 
 .intro-data {
-    background-image: url("../../templates/images/franki-chamaki-682112-unsplash.jpg");
+    background-image: url("../images/franki-chamaki-682112-unsplash.jpg");
     background-size: cover;
     height: 55vh;
     display: flex;

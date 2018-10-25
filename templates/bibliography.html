@@ -9,12 +9,12 @@ crossorigin=""/>
 integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
 crossorigin=""></script>
     <link href="https://bootswatch.com/4/litera/bootstrap.css"rel="stylesheet">
-    <link href="../static/css/style.css" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet">
     <title>California Quitters</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light navshadow">
-        <a class="navbar-brand" href="index.html">Quitting California</a>
+        <a class="navbar-brand" href="{{ url_for('index') }}">Quitting California</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,7 +25,7 @@ crossorigin=""></script>
               <a class="nav-link" href="#">Dashboard</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="data.html">Data Sources</a>
+              <a class="nav-link" href="{{ url_for('bib') }}">Data Sources</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Contributors</a>
