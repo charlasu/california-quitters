@@ -9,7 +9,7 @@
     integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
     crossorigin=""></script>
         <link href="https://bootswatch.com/4/litera/bootstrap.css"rel="stylesheet">
-        <link href="../static/css/style.css" rel="stylesheet">
+        <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet">
         <title>California Quitters</title>
     </head>
     <body>
@@ -26,7 +26,7 @@
                   <a class="nav-link" href="#">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="data.html">Data Sources</a>
+                  <a class="nav-link" href="bib.html">Data Sources</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Contributors</a>
@@ -48,34 +48,6 @@
             </div>
           </div>
         </header>
-          <!-- <div class="container">
-              <div class="row">
-                  <p class="lead">In reaction to a <a href="http://www.latimes.com/opinion/op-ed/la-oe-arellano-california-quitters-20181003-story.html">Los Angles Times article</a> discussing California emigration, this project explores what might be influencing it and the influence it might be having in turn. Because the article also mentions the amenities migrating Californians supposedly expect, migration data from California is surveyed alongside a favorite amenity's growth in several Western states: Washington, Oregon, Colorado, Utah, Idaho, Nevada and Arizona.</p>
-              </div>
-            <div class="row">
-              <div class="card-deck">
-                <div class="card">
-                    <blockquote class="blockquote">
-                        <p class="mb-0">I say phooey to people who want all of the easy and none of the hard of California and just give up and git.</p>
-                        <footer class="blockquote-footer">Gustavo Arellano <cite title="Source Title">Los Angeles Times</cite></footer>
-                      </blockquote>
-                </div>
-                <div class="card">
-                  <img src="images/izayah-ramos-778080-unsplash.jpg" class="rounded card-image" alt="why would you ever quit this?">
-                </div>
-                <div class="card">
-                    <blockquote class="blockquote">
-                        <p class="mb-0">“Where's your roommate?"<br/><br/>"Which one? The model, the yoga instructor or the influencer?"</p>
-                        <footer class="blockquote-footer">OverheardLA</footer>
-                      </blockquote>
-                </div>
-                <div class="card">
-                  <img src="images/sasha-stories-684488-unsplash.jpg" class="rounded card-image" alt="seriously... why would you quit this?">
-                </div>
-              </div>
-            </div>
-            
-          </div> -->
 
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

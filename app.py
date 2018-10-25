@@ -17,8 +17,28 @@ db = client.project_2
 @app.route("/")
 def index():
     """return index.html"""
-
     return render_template("index.html")
+
+@app.route("/dash")
+def dash():
+    """return dash.html"""
+    return render_template("dash.html")
+
+@app.route("/bib")
+def bib():
+    """return dash.html"""
+    return render_template("bibliography.html")
+
+@app.route("/map")
+def map():
+    """return map.html"""
+    return render_template("map.html")
+
+
+
+
+
+
 
 @app.route("/api/breweries/<state_abbr>")
 def brewery_state(state_abbr):
@@ -74,7 +94,7 @@ def population():
 
     return json.dumps(pop_data)
 
-# @app.route("/api/housing/<year>")
+# @app.route("/api/rent")
 # def housing():
 #     """Return a json of housing data for given year"""
 #     res = db.session.query(*sel).filter(HousingData.year == year).all()
