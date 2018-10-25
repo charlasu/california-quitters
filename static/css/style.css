@@ -15,7 +15,7 @@ body {
 .intro-palm {
     background-image: url("../../templates/images/julian-howard-655515-unsplash.jpg");
     background-size: cover;
-    height: 70vh;
+    height: 15vh;
     display: flex;
     min-height: auto;
     text-align: center;
@@ -43,11 +43,18 @@ header .header-palm-inner h1{
     font-size: 90%;
 }
 
-.card-deck{
+.row {
+    height: 20vh;
+    text-align: center;
+    margin-top: 1vh;
+    margin-bottom: 0;
+}
+
+/* .card-deck{
     height: 25vh;
     margin-top:1%;
     margin-bottom:1%;
-}
+} */
 
 .card {
     display: flex;
@@ -60,8 +67,10 @@ header .header-palm-inner h1{
 }
 
 
-#card-image {
+.card-image {
+    height: 18vh;
     width: 100%;
+    object-fit: cover;
 }
 
 #dash {
