@@ -13,7 +13,7 @@ body {
 }
 
 .intro-palm {
-    background-image: "/images/izayah-ramos-778080-unsplash.jpg";
+    background-image: url("../images/julian-howard-655515-unsplash.jpg");
     background-size: cover;
     height: 100vh;
     display: flex;
@@ -29,13 +29,14 @@ body {
 }
 
 header .header-palm-inner h1{
-    color: #fdc975;
+    color: #de77ae;
     margin: 0;
     text-shadow: 1px 1px 10px #fff, 1px 1px 10px #fff, 1px 1px 10px #fff, -1px -1px 10px #fff,-1px -1px 10px #fff,-1px -1px 10px #fff,1px 1px 10px #fff;
 }
 
 header .header-palm-inner p{
-    color: #f7f7f8;
+    color: #000;
+    text-shadow: 1px 1px 10px #fff, 1px 1px 10px #fff, 1px 1px 10px #fff, -1px -1px 10px #fff,-1px -1px 10px #fff,-1px -1px 10px #fff,1px 1px 10px #fff;
     margin: 0;
 }
 
