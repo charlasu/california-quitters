@@ -13,9 +13,9 @@ body {
 }
 
 .intro-palm {
-    background-image: url("../../templates/images/julian-howard-655515-unsplash.jpg");
+    background-image: url("../../templates/images/izayah-ramos-778080-unsplash.jpg");
     background-size: cover;
-    height: 15vh;
+    height: 100vh;
     display: flex;
     min-height: auto;
     text-align: center;
@@ -29,9 +29,14 @@ body {
 }
 
 header .header-palm-inner h1{
-    color: #de77ae;
+    color: #fdc975;
     margin: 0;
     text-shadow: 1px 1px 10px #fff, 1px 1px 10px #fff, 1px 1px 10px #fff, -1px -1px 10px #fff,-1px -1px 10px #fff,-1px -1px 10px #fff,1px 1px 10px #fff;
+}
+
+header .header-palm-inner p{
+    color: #f7f7f8;
+    margin: 0;
 }
 
 .navshadow {
@@ -44,10 +49,8 @@ header .header-palm-inner h1{
 }
 
 .row {
-    height: 20vh;
     text-align: center;
     margin-top: 1vh;
-    margin-bottom: 0;
 }
 
 /* .card-deck{
