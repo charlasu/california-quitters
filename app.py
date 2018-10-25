@@ -1,36 +1,43 @@
-from flask import Flask, jsonify, render_template
+#import dependencies
+from flask import Flask, render_template
 import pymongo
 import json
+
+#establish flask app
 app = Flask(__name__)
 
-
-#################################################
-# Database Setup
-#################################################
-
+#connect local client to remote server through uri
 connect = 'mongodb://user:California1@ds253891.mlab.com:53891/project_2'
 client = pymongo.MongoClient(connect)
 
-#connect to mongo db and collection
+#create reference to project_2 db
 db = client.project_2
 
-# reflect an existing database into a new model
-# pop_db = client.
-# brew_db = client.
-# house_db = client.
-
+#routes
 @app.route("/")
 def index():
-    """Return the homepage."""
+    """return index.html"""
 
     return render_template("index.html")
 
-@app.route("/test")
-def test():
-    """return ca brewery data"""
-    ca_brew_data = []
+@app.route("/api/breweries/<state_abbr>")
+def brewery_state(state_abbr):
+    """return brewery data by state"""
 
-    collection = db.CA_Brewery
+    #get collection by state abbreviation
+    get_brew_collection = {
+        'AZ': db.AZ_Brewery,
+        'CA': db.CA_Brewery,
+        'CO': db.CO_Brewery,
+        'ID': db.ID_Brewery,
+        'NV': db.NV_Brewery,
+        'OR': db.OR_Brewery,
+        'UT': db.UT_Brewery,
+        'WA': db.WA_Brewery
+    }
+
+    collection = get_brew_collection[state_abbr.upper()]
+    state_brew_data = []
 
     cursor = collection.find({})
     for doc in cursor:
@@ -40,35 +47,33 @@ def test():
             'loc': doc['Location'],
             'year_est': doc['Established Year']
         }
-        ca_brew_data.append(appendable_dict)
+        state_brew_data.append(appendable_dict)
 
-    return json.dumps(ca_brew_data)
+    return json.dumps(state_brew_data)
 
-# @app.route("/api/population/<year>")
-# def population():
-#     """Return a json of population data for given year"""
-#     res = db.session.query(*sel).filter(PopulationData.year == year).all()
-#
-#     population_to_json = {}
-#     for re in res:
-#         population_to_json["year"] = re[0]
-#         population_to_json["state"] = re[7]
-#         population_to_json["pop"] = re[1]
-#         population_to_json["variable_name"] = re[i]
-#
-#     return jsonify(population_to_son)
-#
-# @app.route("/api/breweries/<year>")
-# def breweries():
-#     """Return a json of brewery data for given year"""
-#     res = db.session.query(*sel).filter(BreweryData.year == year).all()
-#
-#     brewery_to_json = {}
-#     for re in res:
-#         brewery_to_json["variable_name"] = re[i]
-#
-#     return jsonify(brewery_to_json)
-#
+@app.route("/api/population")
+def population():
+    """return population data"""
+
+    collection = db.Population_Data
+    pop_data = []
+
+    cursor = collection.find({})
+    for doc in cursor:
+        appendable_dict = {
+            'moved_to': doc['MOVED_TO'],
+            'coords': [float(doc['COORDS'].split(",")[0][1:]), float(doc['COORDS'].split(",")[1][1:][:-1])],
+            'year': int(doc['YR']),
+            'num_outbound': int(doc['NO_OUTBOUND'].replace(',', ''))
+        }
+        if(type(doc['POPULATION']) != str):
+            appendable_dict['population'] = int(-1)
+        else:
+            appendable_dict['population'] = int(doc['POPULATION'].replace(',', ''))
+        pop_data.append(appendable_dict)
+
+    return json.dumps(pop_data)
+
 # @app.route("/api/housing/<year>")
 # def housing():
 #     """Return a json of housing data for given year"""
