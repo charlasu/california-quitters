@@ -13,7 +13,7 @@ body {
 }
 
 .intro-palm {
-    background-image: url("../../templates/images/izayah-ramos-778080-unsplash.jpg");
+    background-image: "/images/izayah-ramos-778080-unsplash.jpg";
     background-size: cover;
     height: 100vh;
     display: flex;
