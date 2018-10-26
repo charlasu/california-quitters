@@ -1,7 +1,7 @@
 // Chart Params
 // var svgWidth = 960;
-var svgWidth = window.innerWidth* 0.4;
-var svgHeight = window.innerHeight * 0.4;
+var svgWidth = window.innerWidth* 0.45;
+var svgHeight = window.innerHeight * 0.7;
 
 var margin = { top: 20, right: 40, bottom: 60, left: 50 };
 

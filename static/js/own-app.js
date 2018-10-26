@@ -1,7 +1,7 @@
 // Chart Params
 // var svgWidth = 960;
-var svgWidthown = window.innerWidth* 0.4;
-var svgHeightown = window.innerHeight * 0.4;
+var svgWidthown = window.innerWidth* 0.45;
+var svgHeightown = window.innerHeight * 0.7;
 
 var marginown = { top: 20, right: 40, bottom: 60, left: 50 };
 

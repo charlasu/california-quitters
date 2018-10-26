@@ -19,7 +19,11 @@
 .renttooltip{
   color: steelblue;
   text-align: center;
-  margin-left: -60%;
+  /* margin-left: -60%; */
+}
+
+.rent {
+  float: left;
 }
 
 
