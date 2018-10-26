@@ -1,7 +1,7 @@
 // Chart Params
 // var svgWidth = 960;
-var svgWidth = window.innerWidth - 25
-var svgHeight = 500;
+var svgWidth = window.innerWidth/2;
+var svgHeight = window.innerHeight/2;
 
 var margin = { top: 20, right: 40, bottom: 60, left: 50 };
 
@@ -10,7 +10,7 @@ var height = svgHeight - margin.top - margin.bottom;
 
 // Create an SVG wrapper, append an SVG group that will hold our chart, and shift the latter by left and top margins.
 var svg = d3
-  .select("body")
+  .select(".chart")
   .append("svg")
   .attr("width", svgWidth)
   .attr("height", svgHeight)
@@ -20,11 +20,11 @@ var chartGroup = svg.append("g")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 // Import data from an external CSV file
-d3.csv("Rent_Value_Data.csv", function(error, rentData) {
+d3.csv("../static/data/Rent_Value_Data.csv", function(error, rentData) {
   if (error) throw error;
 
   // Create a function to parse date and time
-  // var parseTime = d3.timeFormat("%Y");
+  //var parseTime = d3.timeParse("%Y");
 
   // Format the data
   rentData.forEach(function(data) {
@@ -42,9 +42,9 @@ d3.csv("Rent_Value_Data.csv", function(error, rentData) {
   });
 
   // Create scaling functions
-  var xLinearScale = d3.scaleLinear()  
-    .domain([2005,2016])
-    .range([0, width]);
+  var xLinearScale = d3.scaleLinear()
+    .range([0, width])
+    .domain([2005,2016]);
 
   var yLinearScale1 = d3.scaleLinear()
     .domain([500,1500])
@@ -55,7 +55,7 @@ d3.csv("Rent_Value_Data.csv", function(error, rentData) {
     .range([height, 0]);
 
   // Create axis functions
-  var bottomAxis = d3.axisBottom(xLinearScale);
+  var bottomAxis = d3.axisBottom(xLinearScale).tickFormat(d3.format("d"));
   var leftAxis = d3.axisLeft(yLinearScale1);
   var rightAxis = d3.axisRight(yLinearScale2);
 
@@ -77,7 +77,7 @@ d3.csv("Rent_Value_Data.csv", function(error, rentData) {
 
   // Line generators for each line
   var line1 = d3.line()
-    .x(d => xLinearScale(d.date))
+    .x(d => xLinearScale(d.Date))
     .y(d => yLinearScale1(d.US_Rent));
 
   var line2 = d3.line()
@@ -319,7 +319,7 @@ d3.csv("Rent_Value_Data.csv", function(error, rentData) {
 
   // Append axes titles
   chartGroup.append("text")
-  .attr("transform", `translate(${width / 2.2}, ${height + margin.top + 37})`)
+  .attr("transform", `translate(${width /2.5}, ${height + margin.top + 37})`)
     .attr("fill", "darkorange")
     .text("US Median Rent");
 
