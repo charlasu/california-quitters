@@ -1,0 +1,562 @@
+[
+  {
+    "MOVED_TO": "Arizona",
+    "COORDS": [
+      34.1682185,
+      -111.930907
+    ],
+    "YR": 2010,
+    "NO_OUTBOUND": "47,164",
+    "POPULATION": "6,407,002"
+  },
+  {
+    "MOVED_TO": "Colorado",
+    "COORDS": [
+      38.9979339,
+      -105.550567
+    ],
+    "YR": 2010,
+    "NO_OUTBOUND": "26,089",
+    "POPULATION": "5,048,029"
+  },
+  {
+    "MOVED_TO": "Idaho",
+    "COORDS": [
+      45.4945756,
+      -114.1424303
+    ],
+    "YR": 2010,
+    "NO_OUTBOUND": "8,932",
+    "POPULATION": "1,570,912"
+  },
+  {
+    "MOVED_TO": "Nevada",
+    "COORDS": [
+      38.502032,
+      -117.0230604
+    ],
+    "YR": 2010,
+    "NO_OUTBOUND": "35,472",
+    "POPULATION": "2,702,797"
+  },
+  {
+    "MOVED_TO": "New Mexico",
+    "COORDS": [
+      34.1662325,
+      -106.0260685
+    ],
+    "YR": 2010,
+    "NO_OUTBOUND": "6,547",
+    "POPULATION": "2,064,607"
+  },
+  {
+    "MOVED_TO": "Oregon",
+    "COORDS": [
+      44.1419049,
+      -120.5380993
+    ],
+    "YR": 2010,
+    "NO_OUTBOUND": "34,190",
+    "POPULATION": "3,837,073"
+  },
+  {
+    "MOVED_TO": "Utah",
+    "COORDS": [
+      39.4997605,
+      -111.547028
+    ],
+    "YR": 2010,
+    "NO_OUTBOUND": "12,187",
+    "POPULATION": "2,775,260"
+  },
+  {
+    "MOVED_TO": "Washington",
+    "COORDS": [
+      38.8993487,
+      -77.0145665
+    ],
+    "YR": 2010,
+    "NO_OUTBOUND": "39,468",
+    "POPULATION": "6,741,386"
+  },
+  {
+    "MOVED_TO": "Arizona",
+    "COORDS": [
+      34.1682185,
+      -111.930907
+    ],
+    "YR": 2011,
+    "NO_OUTBOUND": "49,635",
+    "POPULATION": "6,465,488"
+  },
+  {
+    "MOVED_TO": "Colorado",
+    "COORDS": [
+      38.9979339,
+      -105.550567
+    ],
+    "YR": 2011,
+    "NO_OUTBOUND": "23,234",
+    "POPULATION": "5,116,411"
+  },
+  {
+    "MOVED_TO": "Idaho",
+    "COORDS": [
+      45.4945756,
+      -114.1424303
+    ],
+    "YR": 2011,
+    "NO_OUTBOUND": "9,021",
+    "POPULATION": "1,583,180"
+  },
+  {
+    "MOVED_TO": "Nevada",
+    "COORDS": [
+      38.502032,
+      -117.0230604
+    ],
+    "YR": 2011,
+    "NO_OUTBOUND": "40,114",
+    "POPULATION": "2,718,170"
+  },
+  {
+    "MOVED_TO": "New Mexico",
+    "COORDS": [
+      34.1662325,
+      -106.0260685
+    ],
+    "YR": 2011,
+    "NO_OUTBOUND": "7,066",
+    "POPULATION": "2,077,744"
+  },
+  {
+    "MOVED_TO": "Oregon",
+    "COORDS": [
+      44.1419049,
+      -120.5380993
+    ],
+    "YR": 2011,
+    "NO_OUTBOUND": "34,214",
+    "POPULATION": "3,865,845"
+  },
+  {
+    "MOVED_TO": "Utah",
+    "COORDS": [
+      39.4997605,
+      -111.547028
+    ],
+    "YR": 2011,
+    "NO_OUTBOUND": "18,237",
+    "POPULATION": "2,815,430"
+  },
+  {
+    "MOVED_TO": "Washington",
+    "COORDS": [
+      38.8993487,
+      -77.0145665
+    ],
+    "YR": 2011,
+    "NO_OUTBOUND": "38,421",
+    "POPULATION": "6,819,155"
+  },
+  {
+    "MOVED_TO": "Arizona",
+    "COORDS": [
+      34.1682185,
+      -111.930907
+    ],
+    "YR": 2012,
+    "NO_OUTBOUND": "44,889",
+    "POPULATION": "6,544,211"
+  },
+  {
+    "MOVED_TO": "Colorado",
+    "COORDS": [
+      38.9979339,
+      -105.550567
+    ],
+    "YR": 2012,
+    "NO_OUTBOUND": "22,152",
+    "POPULATION": "5,186,330"
+  },
+  {
+    "MOVED_TO": "Idaho",
+    "COORDS": [
+      45.4945756,
+      -114.1424303
+    ],
+    "YR": 2012,
+    "NO_OUTBOUND": "10,280",
+    "POPULATION": "1,594,673"
+  },
+  {
+    "MOVED_TO": "Nevada",
+    "COORDS": [
+      38.502032,
+      -117.0230604
+    ],
+    "YR": 2012,
+    "NO_OUTBOUND": "49,978",
+    "POPULATION": "2,752,410"
+  },
+  {
+    "MOVED_TO": "New Mexico",
+    "COORDS": [
+      34.1662325,
+      -106.0260685
+    ],
+    "YR": 2012,
+    "NO_OUTBOUND": "4,536",
+    "POPULATION": "2,083,590"
+  },
+  {
+    "MOVED_TO": "Oregon",
+    "COORDS": [
+      44.1419049,
+      -120.5380993
+    ],
+    "YR": 2012,
+    "NO_OUTBOUND": "31,862",
+    "POPULATION": "3,893,920"
+  },
+  {
+    "MOVED_TO": "Utah",
+    "COORDS": [
+      39.4997605,
+      -111.547028
+    ],
+    "YR": 2012,
+    "NO_OUTBOUND": "15,286",
+    "POPULATION": "2,854,222"
+  },
+  {
+    "MOVED_TO": "Washington",
+    "COORDS": [
+      38.8993487,
+      -77.0145665
+    ],
+    "YR": 2012,
+    "NO_OUTBOUND": "45,597",
+    "POPULATION": "6,890,899"
+  },
+  {
+    "MOVED_TO": "Arizona",
+    "COORDS": [
+      34.1682185,
+      -111.930907
+    ],
+    "YR": 2013,
+    "NO_OUTBOUND": "47,959",
+    "POPULATION": "6,616,124"
+  },
+  {
+    "MOVED_TO": "Colorado",
+    "COORDS": [
+      38.9979339,
+      -105.550567
+    ],
+    "YR": 2013,
+    "NO_OUTBOUND": "23,714",
+    "POPULATION": "5,262,556"
+  },
+  {
+    "MOVED_TO": "Idaho",
+    "COORDS": [
+      45.4945756,
+      -114.1424303
+    ],
+    "YR": 2013,
+    "NO_OUTBOUND": "9,232",
+    "POPULATION": "1,610,187"
+  },
+  {
+    "MOVED_TO": "Nevada",
+    "COORDS": [
+      38.502032,
+      -117.0230604
+    ],
+    "YR": 2013,
+    "NO_OUTBOUND": "47,897",
+    "POPULATION": "2,786,547"
+  },
+  {
+    "MOVED_TO": "New Mexico",
+    "COORDS": [
+      34.1662325,
+      -106.0260685
+    ],
+    "YR": 2013,
+    "NO_OUTBOUND": "5,697",
+    "POPULATION": "2,085,161"
+  },
+  {
+    "MOVED_TO": "Oregon",
+    "COORDS": [
+      44.1419049,
+      -120.5380993
+    ],
+    "YR": 2013,
+    "NO_OUTBOUND": "31,380",
+    "POPULATION": "3,919,664"
+  },
+  {
+    "MOVED_TO": "Utah",
+    "COORDS": [
+      39.4997605,
+      -111.547028
+    ],
+    "YR": 2013,
+    "NO_OUTBOUND": "15,794",
+    "POPULATION": "2,899,961"
+  },
+  {
+    "MOVED_TO": "Washington",
+    "COORDS": [
+      38.8993487,
+      -77.0145665
+    ],
+    "YR": 2013,
+    "NO_OUTBOUND": "37,150",
+    "POPULATION": "6,963,410"
+  },
+  {
+    "MOVED_TO": "Arizona",
+    "COORDS": [
+      34.1682185,
+      -111.930907
+    ],
+    "YR": 2014,
+    "NO_OUTBOUND": "57,446",
+    "POPULATION": "6,706,435"
+  },
+  {
+    "MOVED_TO": "Colorado",
+    "COORDS": [
+      38.9979339,
+      -105.550567
+    ],
+    "YR": 2014,
+    "NO_OUTBOUND": "24,506",
+    "POPULATION": "5,342,311"
+  },
+  {
+    "MOVED_TO": "Idaho",
+    "COORDS": [
+      45.4945756,
+      -114.1424303
+    ],
+    "YR": 2014,
+    "NO_OUTBOUND": "10,057",
+    "POPULATION": "1,630,391"
+  },
+  {
+    "MOVED_TO": "Nevada",
+    "COORDS": [
+      38.502032,
+      -117.0230604
+    ],
+    "YR": 2014,
+    "NO_OUTBOUND": "48,954",
+    "POPULATION": "2,831,730"
+  },
+  {
+    "MOVED_TO": "New Mexico",
+    "COORDS": [
+      34.1662325,
+      -106.0260685
+    ],
+    "YR": 2014,
+    "NO_OUTBOUND": "4,986",
+    "POPULATION": "2,083,207"
+  },
+  {
+    "MOVED_TO": "Oregon",
+    "COORDS": [
+      44.1419049,
+      -120.5380993
+    ],
+    "YR": 2014,
+    "NO_OUTBOUND": "35,334",
+    "POPULATION": "3,960,673"
+  },
+  {
+    "MOVED_TO": "Utah",
+    "COORDS": [
+      39.4997605,
+      -111.547028
+    ],
+    "YR": 2014,
+    "NO_OUTBOUND": "14,510",
+    "POPULATION": "2,938,671"
+  },
+  {
+    "MOVED_TO": "Washington",
+    "COORDS": [
+      38.8993487,
+      -77.0145665
+    ],
+    "YR": 2014,
+    "NO_OUTBOUND": "40,085",
+    "POPULATION": "7,046,931"
+  },
+  {
+    "MOVED_TO": "Arizona",
+    "COORDS": [
+      34.1682185,
+      -111.930907
+    ],
+    "YR": 2015,
+    "NO_OUTBOUND": "54,646",
+    "POPULATION": "6,802,262"
+  },
+  {
+    "MOVED_TO": "Colorado",
+    "COORDS": [
+      38.9979339,
+      -105.550567
+    ],
+    "YR": 2015,
+    "NO_OUTBOUND": "29,029",
+    "POPULATION": "5,440,445"
+  },
+  {
+    "MOVED_TO": "Idaho",
+    "COORDS": [
+      45.4945756,
+      -114.1424303
+    ],
+    "YR": 2015,
+    "NO_OUTBOUND": "18,928",
+    "POPULATION": "1,649,324"
+  },
+  {
+    "MOVED_TO": "Nevada",
+    "COORDS": [
+      38.502032,
+      -117.0230604
+    ],
+    "YR": 2015,
+    "NO_OUTBOUND": "54,765",
+    "POPULATION": "2,883,057"
+  },
+  {
+    "MOVED_TO": "New Mexico",
+    "COORDS": [
+      34.1662325,
+      -106.0260685
+    ],
+    "YR": 2015,
+    "NO_OUTBOUND": "6,721",
+    "POPULATION": "2,082,264"
+  },
+  {
+    "MOVED_TO": "Oregon",
+    "COORDS": [
+      44.1419049,
+      -120.5380993
+    ],
+    "YR": 2015,
+    "NO_OUTBOUND": "40,447",
+    "POPULATION": "4,016,537"
+  },
+  {
+    "MOVED_TO": "Utah",
+    "COORDS": [
+      39.4997605,
+      -111.547028
+    ],
+    "YR": 2015,
+    "NO_OUTBOUND": "18,154",
+    "POPULATION": "2,984,917"
+  },
+  {
+    "MOVED_TO": "Washington",
+    "COORDS": [
+      38.8993487,
+      -77.0145665
+    ],
+    "YR": 2015,
+    "NO_OUTBOUND": "45,609",
+    "POPULATION": "7,152,818"
+  },
+  {
+    "MOVED_TO": "Arizona",
+    "COORDS": [
+      34.1682185,
+      -111.930907
+    ],
+    "YR": 2016,
+    "NO_OUTBOUND": "64,756",
+    "POPULATION": "6,908,642"
+  },
+  {
+    "MOVED_TO": "Colorado",
+    "COORDS": [
+      38.9979339,
+      -105.550567
+    ],
+    "YR": 2016,
+    "NO_OUTBOUND": "26,909",
+    "POPULATION": "5,530,105"
+  },
+  {
+    "MOVED_TO": "Idaho",
+    "COORDS": [
+      45.4945756,
+      -114.1424303
+    ],
+    "YR": 2016,
+    "NO_OUTBOUND": "17,019",
+    "POPULATION": "1,680,026"
+  },
+  {
+    "MOVED_TO": "Nevada",
+    "COORDS": [
+      38.502032,
+      -117.0230604
+    ],
+    "YR": 2016,
+    "NO_OUTBOUND": "45,482",
+    "POPULATION": "2,939,254"
+  },
+  {
+    "MOVED_TO": "New Mexico",
+    "COORDS": [
+      34.1662325,
+      -106.0260685
+    ],
+    "YR": 2016,
+    "NO_OUTBOUND": "4,939",
+    "POPULATION": "2,085,432"
+  },
+  {
+    "MOVED_TO": "Oregon",
+    "COORDS": [
+      44.1419049,
+      -120.5380993
+    ],
+    "YR": 2016,
+    "NO_OUTBOUND": "43,804",
+    "POPULATION": "4,085,989"
+  },
+  {
+    "MOVED_TO": "Utah",
+    "COORDS": [
+      39.4997605,
+      -111.547028
+    ],
+    "YR": 2016,
+    "NO_OUTBOUND": "23,034",
+    "POPULATION": "3,044,321"
+  },
+  {
+    "MOVED_TO": "Washington",
+    "COORDS": [
+      38.8993487,
+      -77.0145665
+    ],
+    "YR": 2016,
+    "NO_OUTBOUND": "51,485",
+    "POPULATION": "7,280,934"
+  }
+]
