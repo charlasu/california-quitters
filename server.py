@@ -34,26 +34,20 @@ def map():
     """return map.html"""
     return render_template("map.html")
 
-
-
-
-
-
-
 @app.route("/api/breweries/<state_abbr>")
 def brewery_state(state_abbr):
     """return brewery data by state"""
 
     #get collection by state abbreviation
     get_brew_collection = {
-        'AZ': db.AZ_Brewery,
-        'CA': db.CA_Brewery,
-        'CO': db.CO_Brewery,
-        'ID': db.ID_Brewery,
-        'NV': db.NV_Brewery,
-        'OR': db.OR_Brewery,
-        'UT': db.UT_Brewery,
-        'WA': db.WA_Brewery
+        'AZ': db.breweries_AZ,
+        'CA': db.breweries_CA,
+        'CO': db.breweries_CO,
+        'ID': db.breweries_ID,
+        'NV': db.breweries_NV,
+        'OR': db.breweries_OR,
+        'UT': db.breweries_UT,
+        'WA': db.breweries_WA
     }
 
     collection = get_brew_collection[state_abbr.upper()]
@@ -82,28 +76,48 @@ def population():
     for doc in cursor:
         appendable_dict = {
             'moved_to': doc['MOVED_TO'],
-            'coords': [float(doc['COORDS'].split(",")[0][1:]), float(doc['COORDS'].split(",")[1][1:][:-1])],
             'year': int(doc['YR']),
-            'num_outbound': int(doc['NO_OUTBOUND'].replace(',', ''))
+            'num_outbound': int(doc['NO_OUTBOUND']),
+            'pop': int(doc['POPULATION'])
         }
-        if(type(doc['POPULATION']) != str):
-            appendable_dict['population'] = int(-1)
-        else:
-            appendable_dict['population'] = int(doc['POPULATION'].replace(',', ''))
         pop_data.append(appendable_dict)
 
     return json.dumps(pop_data)
 
-# @app.route("/api/rent")
-# def housing():
-#     """Return a json of housing data for given year"""
-#     res = db.session.query(*sel).filter(HousingData.year == year).all()
-#
-#     house_to_json = {}
-#     for re in res:
-#         house_to_json["variable_name"] = re[i]
-#
-#     return jsonify(house_to_json)
+@app.route("/api/rent")
+def housing():
+    """return rent data"""
+    
+    collection = db.Rent_Value_Data
+    rent_data = []
+
+    cursor = collection.find({})
+    for doc in cursor:
+        appendable_dict = {
+            'date': doc['Date'],
+            'us_rent': doc['US_Rent'],
+            'us_val': doc['US_Value'],
+            'ca_rent': doc['California_Rent'],
+            'ca_val': doc['California_Value'],
+            'az_rent': doc['Arizona_Rent'],
+            'az_val': doc['Arizona_Value'],
+            'co_rent': doc['Colorado_Rent'],
+            'co_val': doc['Colorado_Value'],
+            'id_rent': doc['Idaho_Rent'],
+            'id_val': doc['Idaho_Value'],
+            'nm_rent': doc['New_Mexico_Rent'],
+            'nm_val': doc['New_Mexico_Value'],
+            'nv_rent': doc['Nevada_Rent'],
+            'nv_val': doc['Nevada_Value'],
+            'or_rent': doc['Oregon_Rent'],
+            'or_val': doc['Oregon_Value'],
+            'ut_rent': doc['Utah_Rent'],
+            'ut_val': doc['Utah_Value'],
+            'wa_rent': doc['Washington_Rent'],
+            'wa_val': doc['Washington_Value']
+        }
+        rent_data.append(appendable_dict)
+    return json.dumps(rent_data)
 
 
 if __name__ == "__main__":

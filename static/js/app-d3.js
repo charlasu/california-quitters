@@ -29,7 +29,7 @@ d3.csv("../static/data/Rent_Value_Data.csv", function(error, rentData) {
   // Format the data
   rentData.forEach(function(data) {
     data.date = data.Date;
-    data.US_Rent = +data.US_Rent; 
+    data.US_Rent = +data.US_Rent;
     California_Rent = +data.California_Rent;
     Arizona_Rent = +data.Arizona_Rent;
     Colorado_Rent = +data.Colorado_Rent;
@@ -87,7 +87,7 @@ d3.csv("../static/data/Rent_Value_Data.csv", function(error, rentData) {
   var line3 = d3.line()
     .x(d => xLinearScale(d.date))
     .y(d => yLinearScale1(d.Arizona_Rent));
-    
+
   var line4 = d3.line()
     .x(d => xLinearScale(d.date))
     .y(d => yLinearScale1(d.Colorado_Rent));
@@ -129,7 +129,7 @@ d3.csv("../static/data/Rent_Value_Data.csv", function(error, rentData) {
     .attr("fill", "none")
     .on("mouseover",function() {
       toolTip
-      .style("display","block")  
+      .style("display","block")
       .html(`California Median Rent`);
       d3.select(this)
         .attr("stroke", "steelblue");
@@ -150,7 +150,7 @@ d3.csv("../static/data/Rent_Value_Data.csv", function(error, rentData) {
     .attr("fill", "none")
     .on("mouseover",function() {
       toolTip
-        .style("display","block")  
+        .style("display","block")
         .text(`Arizona Median Rent`);
       d3.select(this)
         .attr("stroke", "steelblue")
@@ -172,7 +172,7 @@ d3.csv("../static/data/Rent_Value_Data.csv", function(error, rentData) {
     .attr("fill", "none")
     .on("mouseover",function() {
       toolTip
-        .style("display","block")  
+        .style("display","block")
         .text(`Colorado Median Rent`);
       d3.select(this)
         .attr("stroke", "steelblue");
@@ -193,7 +193,7 @@ d3.csv("../static/data/Rent_Value_Data.csv", function(error, rentData) {
     .attr("fill", "none")
     .on("mouseover",function() {
       toolTip
-        .style("display","block")  
+        .style("display","block")
         .text(`Idaho Median Rent`);
       d3.select(this)
         .attr("stroke", "steelblue");
@@ -214,7 +214,7 @@ d3.csv("../static/data/Rent_Value_Data.csv", function(error, rentData) {
     .attr("fill", "none")
     .on("mouseover",function() {
       toolTip
-        .style("display","block")  
+        .style("display","block")
         .text(`New Mexico Median Rent`);
       d3.select(this)
         .attr("stroke", "steelblue")
@@ -235,7 +235,7 @@ d3.csv("../static/data/Rent_Value_Data.csv", function(error, rentData) {
     .attr("fill", "none")
     .on("mouseover",function() {
       toolTip
-        .style("display","block")  
+        .style("display","block")
         .text(`Nevada Median Rent`);
       d3.select(this)
         .attr("stroke", "steelblue")
@@ -256,7 +256,7 @@ d3.csv("../static/data/Rent_Value_Data.csv", function(error, rentData) {
     .attr("fill", "none")
     .on("mouseover",function() {
       toolTip
-        .style("display","block")  
+        .style("display","block")
         .text(`Oregon Median Rent`);
       d3.select(this)
         .attr("stroke", "steelblue")
@@ -277,7 +277,7 @@ d3.csv("../static/data/Rent_Value_Data.csv", function(error, rentData) {
     .attr("fill", "none")
     .on("mouseover",function() {
       toolTip
-        .style("display","block")  
+        .style("display","block")
         .text(`Utah Median Rent`);
       d3.select(this)
         .attr("stroke", "steelblue")
@@ -298,7 +298,7 @@ d3.csv("../static/data/Rent_Value_Data.csv", function(error, rentData) {
     .attr("fill", "none")
     .on("mouseover",function() {
       toolTip
-        .style("display","block")  
+        .style("display","block")
         .text(`Washington Median Rent`);
       d3.select(this)
         .attr("stroke", "steelblue");

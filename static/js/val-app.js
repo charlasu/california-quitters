@@ -18,29 +18,28 @@ var ownChartGroup = svgown.append("g")
   .attr("transform", `translate(${marginown.left}, ${marginown.top})`);
 
 // Import data from an external CSV file
-d3.csv("../static/data/Rent_Value_Data.csv", function(error, ownData) {
+d3.json("/api/rent", function(error, api_re) {
   if (error) throw error;
 
   // Create a function to parse date and time
   // var parseTime = d3.timeFormat("%Y");
 
   // Format the data
-  ownData.forEach(function(data) {
-    data.date = data.Date;
-    data.US_Value = +data.US_Value; 
-    California_Value = +data.California_Value;
-    Arizona_Value = +data.Arizona_Value;
-    Colorado_Value = +data.Colorado_Value;
-    Idaho_Value = +data.Idaho_Value;
-    New_Mexico_Value = +data.New_Mexico_Value;
-    Nevada_Value = +data.Nevada_Value;
-    Oregon_Value = +data.Oregon_Value;
-    Utah_Value = +data.Utah_Value;
-    Washington_Value = +data.Washington_Value;
+  api_re.forEach(function(data) {
+    data.us_val = +data.us_val;
+    ca_val = +data.ca_val;
+    az_val = +data.az_val;
+    co_val = +data.co_val;
+    id_val = +data.id_val;
+    nm_val = +data.nm_val;
+    nv_val = +data.nv_val;
+    or_val = +data.or_val;
+    ut_val = +data.ut_val;
+    wa_val = +data.wa_val;
   });
 
   // Create scaling functions
-  var xLinearScale = d3.scaleLinear()  
+  var xLinearScale = d3.scaleLinear()
     .domain([2005,2016])
     .range([0, widthown]);
 
@@ -80,39 +79,39 @@ d3.csv("../static/data/Rent_Value_Data.csv", function(error, ownData) {
 
   var ownLine2 = d3.line()
     .x(d => xLinearScale(d.date))
-    .y(d => yLinearScale1(d.California_Value));
+    .y(d => yLinearScale1(d.ca_val));
 
   var ownLine3 = d3.line()
     .x(d => xLinearScale(d.date))
-    .y(d => yLinearScale1(d.Arizona_Value));
-    
+    .y(d => yLinearScale1(d.az_val));
+
   var ownLine4 = d3.line()
     .x(d => xLinearScale(d.date))
-    .y(d => yLinearScale1(d.Colorado_Value));
+    .y(d => yLinearScale1(d.co_val));
 
   var ownLine5 = d3.line()
     .x(d => xLinearScale(d.date))
-    .y(d => yLinearScale1(d.Idaho_Value));
+    .y(d => yLinearScale1(d.id_val));
 
   var ownLine6 = d3.line()
     .x(d => xLinearScale(d.date))
-    .y(d => yLinearScale1(d.New_Mexico_Value));
+    .y(d => yLinearScale1(d.nm_val));
 
   var ownLine7 = d3.line()
     .x(d => xLinearScale(d.date))
-    .y(d => yLinearScale1(d.Nevada_Value));
+    .y(d => yLinearScale1(d.nv_val));
 
   var ownLine8 = d3.line()
     .x(d => xLinearScale(d.date))
-    .y(d => yLinearScale1(d.Oregon_Value));
+    .y(d => yLinearScale1(d.or_val));
 
   var ownLine9 = d3.line()
     .x(d => xLinearScale(d.date))
-    .y(d => yLinearScale1(d.Utah_Value));
+    .y(d => yLinearScale1(d.ut_val));
 
   var ownLine10 = d3.line()
     .x(d => xLinearScale(d.date))
-    .y(d => yLinearScale1(d.Washington_Value));
+    .y(d => yLinearScale1(d.wa_val));
 
   var ownToolTip = d3.select(".own")
     .append("div")
@@ -120,14 +119,14 @@ d3.csv("../static/data/Rent_Value_Data.csv", function(error, ownData) {
 
   // Append a path for line2
   ownChartGroup.append("path")
-    .data([ownData])
+    .data([api_re])
     .attr("d", ownLine2)
     .attr("stroke", "mistyrose")
     .attr("stroke-width", 4)
     .attr("fill", "none")
     .on("mouseover",function() {
       ownToolTip
-      .style("display","block")  
+      .style("display","block")
       .html(`California Median Value`);
       d3.select(this)
         .attr("stroke", "palevioletred");
@@ -141,14 +140,14 @@ d3.csv("../static/data/Rent_Value_Data.csv", function(error, ownData) {
 
   // Append a path for line3
   ownChartGroup.append("path")
-    .data([ownData])
+    .data([api_re])
     .attr("d", ownLine3)
     .attr("stroke", "mistyrose")
     .attr("stroke-width", 4)
     .attr("fill", "none")
     .on("mouseover",function() {
       ownToolTip
-        .style("display","block")  
+        .style("display","block")
         .text(`Arizona Median Value`);
       d3.select(this)
         .attr("stroke", "palevioletred")
@@ -163,14 +162,14 @@ d3.csv("../static/data/Rent_Value_Data.csv", function(error, ownData) {
 
   // Append a path for line4
   ownChartGroup.append("path")
-    .data([ownData])
+    .data([api_re])
     .attr("d", ownLine4)
     .attr("stroke", "mistyrose")
     .attr("stroke-width", 4)
     .attr("fill", "none")
     .on("mouseover",function() {
       ownToolTip
-        .style("display","block")  
+        .style("display","block")
         .text(`Colorado Median Value`);
       d3.select(this)
         .attr("stroke", "palevioletred");
@@ -184,14 +183,14 @@ d3.csv("../static/data/Rent_Value_Data.csv", function(error, ownData) {
 
   // Append a path for line5
   ownChartGroup.append("path")
-    .data([ownData])
+    .data([api_re])
     .attr("d", ownLine5)
     .attr("stroke", "mistyrose")
     .attr("stroke-width", 4)
     .attr("fill", "none")
     .on("mouseover",function() {
       ownToolTip
-        .style("display","block")  
+        .style("display","block")
         .text(`Idaho Median Value`);
       d3.select(this)
         .attr("stroke", "palevioletred");
@@ -205,14 +204,14 @@ d3.csv("../static/data/Rent_Value_Data.csv", function(error, ownData) {
 
   // Append a path for line6
   ownChartGroup.append("path")
-    .data([ownData])
+    .data([api_re])
     .attr("d", ownLine6)
     .attr("stroke", "mistyrose")
     .attr("stroke-width", 4)
     .attr("fill", "none")
     .on("mouseover",function() {
       ownToolTip
-        .style("display","block")  
+        .style("display","block")
         .text(`New Mexico Median Value`);
       d3.select(this)
         .attr("stroke", "palevioletred")
@@ -226,14 +225,14 @@ d3.csv("../static/data/Rent_Value_Data.csv", function(error, ownData) {
 
   // Append a path for line7
   ownChartGroup.append("path")
-    .data([ownData])
+    .data([api_re])
     .attr("d", ownLine7)
     .attr("stroke", "mistyrose")
     .attr("stroke-width", 4)
     .attr("fill", "none")
     .on("mouseover",function() {
       ownToolTip
-        .style("display","block")  
+        .style("display","block")
         .text(`Nevada Median Value`);
       d3.select(this)
         .attr("stroke", "palevioletred")
@@ -247,14 +246,14 @@ d3.csv("../static/data/Rent_Value_Data.csv", function(error, ownData) {
 
   // Append a path for line8
   ownChartGroup.append("path")
-    .data([ownData])
+    .data([api_re])
     .attr("d", ownLine8)
     .attr("stroke", "mistyrose")
     .attr("stroke-width", 4)
     .attr("fill", "none")
     .on("mouseover",function() {
       ownToolTip
-        .style("display","block")  
+        .style("display","block")
         .text(`Oregon Median Value`);
       d3.select(this)
         .attr("stroke", "palevioletred")
@@ -268,14 +267,14 @@ d3.csv("../static/data/Rent_Value_Data.csv", function(error, ownData) {
 
   // Append a path for line9
   ownChartGroup.append("path")
-    .data([ownData])
+    .data([api_re])
     .attr("d", ownLine9)
     .attr("stroke", "mistyrose")
     .attr("stroke-width", 4)
     .attr("fill", "none")
     .on("mouseover",function() {
       ownToolTip
-        .style("display","block")  
+        .style("display","block")
         .text(`Utah Median Value`);
       d3.select(this)
         .attr("stroke", "palevioletred")
@@ -289,14 +288,14 @@ d3.csv("../static/data/Rent_Value_Data.csv", function(error, ownData) {
 
   // Append a path for line10
   ownChartGroup.append("path")
-    .data([ownData])
+    .data([api_re])
     .attr("d", ownLine10)
     .attr("stroke", "mistyrose")
     .attr("stroke-width", 4)
     .attr("fill", "none")
     .on("mouseover",function() {
       ownToolTip
-        .style("display","block")  
+        .style("display","block")
         .text(`Washington Median Value`);
       d3.select(this)
         .attr("stroke", "palevioletred");
@@ -309,7 +308,7 @@ d3.csv("../static/data/Rent_Value_Data.csv", function(error, ownData) {
 
   // Append a path for line1
   ownChartGroup.append("path")
-    .data([ownData])
+    .data([api_re])
     .attr("d", ownLine1)
     .attr("stroke", "orange")
     .attr("stroke-width", 4)
